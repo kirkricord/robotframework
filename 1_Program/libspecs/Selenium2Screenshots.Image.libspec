@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<keywordspec generated="20170822 18:44:39" type="library" name="Selenium2Screenshots.Image" format="ROBOT">
+<version></version>
+<scope>test case</scope>
+<namedargs>yes</namedargs>
+<doc>Documentation for test library ``Selenium2Screenshots.Image``.</doc>
+<kw name="Crop Image">
+<arguments>
+<arg>output_dir</arg>
+<arg>filename</arg>
+<arg>left</arg>
+<arg>top</arg>
+<arg>width</arg>
+<arg>height</arg>
+</arguments>
+<doc>Crop the saved image with given filename for the given dimensions.</doc>
+<tags>
+</tags>
+</kw>
+</keywordspec>

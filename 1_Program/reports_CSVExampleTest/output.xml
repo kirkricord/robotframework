@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generated="20170830 10:44:01.179" generator="Robot 3.0.2 (Python 2.7.13 on win32)">
+<suite source="C:\Users\GbitCorp\Desktop\Python\red\workspace\1_Program\test_cases\CSVExampleTest.robot" id="s1" name="CSVExampleTest">
+<test id="s1-t1" name="Read csv file to">
+<kw name="Read Csv File To List" library="CSVLibrary">
+<doc>Read CSV file and return its content as a Python list of tuples.</doc>
+<arguments>
+<arg>C:\\Users\\GbitCorp\\Desktop\\Python\\red\\workspace\\1_Program\\test_cases\\..\\csv\\data_1.csv</arg>
+</arguments>
+<assign>
+<var>${all users}</var>
+</assign>
+<msg timestamp="20170830 10:44:01.380" level="INFO">${all users} = [('http://www.prensa.com/', 'gc', 'prensa.png'), ('http://www.midiario.com/', 'ff', 'midiario.png'), ('http://elsiglo.com.pa/', 'gc', 'elsiglo.png')]</msg>
+<status status="PASS" endtime="20170830 10:44:01.381" starttime="20170830 10:44:01.380"></status>
+</kw>
+<kw type="for" name="${user} IN [ @{all users} ]">
+<kw type="foritem" name="${user} = ('http://www.prensa.com/', 'gc', 'prensa.png')">
+<kw name="Open Browser" library="Selenium2Library">
+<doc>Opens a new browser instance to given URL.</doc>
+<arguments>
+<arg>@{user}[0]</arg>
+<arg>@{user}[1]</arg>
+</arguments>
+<msg timestamp="20170830 10:44:01.382" level="INFO">Opening browser 'gc' to base url 'http://www.prensa.com/'</msg>
+<status status="PASS" endtime="20170830 10:44:05.811" starttime="20170830 10:44:01.381"></status>
+</kw>
+<kw name="Maximize Browser Window" library="Selenium2Library">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" endtime="20170830 10:44:06.946" starttime="20170830 10:44:05.812"></status>
+</kw>
+<kw name="Set Selenium Speed" library="Selenium2Library">
+<doc>Sets the delay in seconds that is waited after each Selenium command.</doc>
+<arguments>
+<arg>${DELAY}</arg>
+</arguments>
+<status status="PASS" endtime="20170830 10:44:06.947" starttime="20170830 10:44:06.947"></status>
+</kw>
+<kw name="Capture Page Screenshot" library="Selenium2Library">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<arguments>
+<arg>${SCREENSHOT_PATH_1}\\@{user}[2]</arg>
+</arguments>
+<msg timestamp="20170830 10:44:07.277" html="yes" level="INFO">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="screenshot/prensa.png"&gt;&lt;img src="screenshot/prensa.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" endtime="20170830 10:44:07.277" starttime="20170830 10:44:06.947"></status>
+</kw>
+<kw name="Close Browser" library="Selenium2Library">
+<doc>Closes the current browser.</doc>
+<status status="PASS" endtime="20170830 10:44:10.394" starttime="20170830 10:44:07.277"></status>
+</kw>
+<status status="PASS" endtime="20170830 10:44:10.394" starttime="20170830 10:44:01.381"></status>
+</kw>
+<kw type="foritem" name="${user} = ('http://www.midiario.com/', 'ff', 'midiario.png')">
+<kw name="Open Browser" library="Selenium2Library">
+<doc>Opens a new browser instance to given URL.</doc>
+<arguments>
+<arg>@{user}[0]</arg>
+<arg>@{user}[1]</arg>
+</arguments>
+<msg timestamp="20170830 10:44:10.397" level="INFO">Opening browser 'ff' to base url 'http://www.midiario.com/'</msg>
+<kw name="Capture Page Screenshot" library="Selenium2Library">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20170830 10:44:18.530" html="yes" level="INFO">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-1.png"&gt;&lt;img src="selenium-screenshot-1.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" endtime="20170830 10:44:18.530" starttime="20170830 10:44:18.459"></status>
+</kw>
+<msg timestamp="20170830 10:44:18.533" level="FAIL">WebDriverException: Message: Reached error page: about:neterror?e=dnsNotFound&amp;u=http%3A//www.midiario.com/&amp;c=UTF-8&amp;f=regular&amp;d=Firefox%20no%20puede%20encontrar%20el%20servidor%20en%20www.midiario.com.
+</msg>
+<status status="FAIL" endtime="20170830 10:44:18.533" starttime="20170830 10:44:10.395"></status>
+</kw>
+<status status="FAIL" endtime="20170830 10:44:18.533" starttime="20170830 10:44:10.394"></status>
+</kw>
+<status status="FAIL" endtime="20170830 10:44:18.533" starttime="20170830 10:44:01.381"></status>
+</kw>
+<status status="FAIL" endtime="20170830 10:44:18.534" critical="yes" starttime="20170830 10:44:01.379">WebDriverException: Message: Reached error page: about:neterror?e=dnsNotFound&amp;u=http%3A//www.midiario.com/&amp;c=UTF-8&amp;f=regular&amp;d=Firefox%20no%20puede%20encontrar%20el%20servidor%20en%20www.midiario.com.
+</status>
+</test>
+<doc>CSV examples for Robot Framework.</doc>
+<status status="FAIL" endtime="20170830 10:44:18.535" starttime="20170830 10:44:01.184"></status>
+</suite>
+<statistics>
+<total>
+<stat fail="1" pass="0">Critical Tests</stat>
+<stat fail="1" pass="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat fail="1" id="s1" name="CSVExampleTest" pass="0">CSVExampleTest</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<keywordspec generated="20170829 18:46:53" type="library" name="CSVLibrary" format="ROBOT">
+<version></version>
+<scope>test case</scope>
+<namedargs>yes</namedargs>
+<doc>Documentation for test library ``CSVLibrary``.</doc>
+<kw name="Append To Csv File">
+<arguments>
+<arg>filename</arg>
+<arg>data</arg>
+<arg>**kwargs</arg>
+</arguments>
+<doc>This keyword will append data to a new or existing CSV file.
+
+- ``filename``:  name of csv file
+- ``data``: iterable(e.g. list or tuple) data.
+- ``quoting`` (int):
+  _0_: QUOTE_MINIMAL
+  _1_: QUOTE_ALL
+  _2_: QUOTE_NONNUMERIC
+  _3_: QUOTE_NONE</doc>
+<tags>
+</tags>
+</kw>
+<kw name="Csv File From Associative">
+<arguments>
+<arg>filename</arg>
+<arg>data</arg>
+<arg>fieldnames=None</arg>
+<arg>delimiter=,</arg>
+<arg>**kwargs</arg>
+</arguments>
+<doc>This keyword will create new file
+
+- ``filename``:  name of csv file
+- ``data``: iterable(e.g. list or tuple) data.
+- ``fieldnames``: list of column names
+- ``delimiter``: Default: `,`
+- ``quoting`` (int):
+  _0_: QUOTE_MINIMAL
+  _1_: QUOTE_ALL
+  _2_: QUOTE_NONNUMERIC
+  _3_: QUOTE_NONE</doc>
+<tags>
+</tags>
+</kw>
+<kw name="Empty Csv File">
+<arguments>
+<arg>filename</arg>
+</arguments>
+<doc>This keyword will empty the CSV file.
+
+- ``filename``: name of csv file</doc>
+<tags>
+</tags>
+</kw>
+<kw name="Read Csv File To Associative">
+<arguments>
+<arg>filename</arg>
+<arg>delimiter=,</arg>
+<arg>fieldnames=None</arg>
+<arg>**kwargs</arg>
+</arguments>
+<doc>Read CSV file and return its content as a Python list of dictionaries.
+
+- ``filename``:  name of csv file
+- ``delimiter``: Default: `,`
+- ``fieldnames``: list of column names
+- ``line_numbers``: List of linenumbers to read. Default None
+- ``quoting`` (int):
+  _0_: QUOTE_MINIMAL
+  _1_: QUOTE_ALL
+  _2_: QUOTE_NONNUMERIC
+  _3_: QUOTE_NONE</doc>
+<tags>
+</tags>
+</kw>
+<kw name="Read Csv File To List">
+<arguments>
+<arg>filename</arg>
+<arg>delimiter=,</arg>
+<arg>**kwargs</arg>
+</arguments>
+<doc>Read CSV file and return its content as a Python list of tuples.
+
+- ``filename``:  name of csv file
+- ``delimiter``: Default: `,`
+- ``line_numbers``: List of linenumbers to read. Default None
+- ``quoting`` (int):
+  _0_: QUOTE_MINIMAL
+  _1_: QUOTE_ALL
+  _2_: QUOTE_NONNUMERIC
+  _3_: QUOTE_NONE</doc>
+<tags>
+</tags>
+</kw>
+</keywordspec>
